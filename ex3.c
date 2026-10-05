@@ -4,6 +4,7 @@
 int main()
 {
     char MotATrouver [100]="bonjour";
+    MotATrouver[size]='\0';
     char lettre;
     int fautes = 0;
     char mot [100];
@@ -12,7 +13,8 @@ int main()
     {
         mot[i]='-';
     }
-    printf (mot);
+    mot[size]='\0';
+    printf ("%s",mot);
 
     while (fautes<7 && mot!=MotATrouver)
     {
@@ -20,15 +22,23 @@ int main()
         scanf("%c",&lettre);
         for (int j=0; j<size; j++)
         {
-            if (lettre == mot[j])
+            if (lettre == MotATrouver[j])
             {
                 mot[j]=lettre;
             }
-            
+
         }
-        printf(mot);
+        printf("%s",mot);
     }
-    
+
+    if (fautes==7)
+    {
+        printf("vous avez perdu");
+    }
+    else
+    {
+        printf("bien joue tu as reussi !!!");
+    }
     
     // printf(" \n\n\n\n\n\n\n-------\n");
     // printf("\n |\n |\n |\n |\n |\n |\n-------\n");
